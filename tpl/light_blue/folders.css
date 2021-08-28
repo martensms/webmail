@@ -1,0 +1,43 @@
+#folders{
+ width: 90%;
+ margin: 0 auto;
+}
+#folders th{
+ background: #c3d9ff;
+ font-weight: bold;
+}
+#folders th,
+#folders td{
+ text-align: center;
+ border: 1px dotted #ccc;
+}
+#folders img{
+ border: 0px;
+ height: 2em;
+ width: 2em;
+}
+#folders td.no{
+ text-align: left;
+}
+#folders a{
+ display: block;
+}
+#folders a:hover{
+ background: #f77;
+}
+form.folder fieldset{
+ margin: 0 auto;
+ width: 220px;
+}
+form.folder fieldset input,
+form.folder fieldset select{
+ display: block;
+ width: 200px;
+ margin: 0 auto;
+}
+form.folder fieldset select{
+ text-align: center;
+}
+form.folder fieldset input[type=submit]{
+ width: auto;
+}

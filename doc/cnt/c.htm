@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+       "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+ <title>webmail - Documentation</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+ <meta http-equiv="Content-Style-Type" content="text/css" />
+ <style type="text/css" title="default style">@import url('./content.css');</style>
+</head>
+<body>
+<h1>Usage</h1>
+<a name="c1">&nbsp;</a>
+<h2>?login</h2>
+<p>
+ This page contains the login formular. It is viewed when the user didn't log in, the session expired or the
+ user wanted to reconfigure his settings.
+</p>
+<img class="left" src="./c1.png" alt="login screenshot"/>
+<div style="width:50%;" class="left">
+ <p>
+  <b>[1] Account Details</b><br/>
+  This fieldset contains the simple login formular. If the user doesn't choose another profile or the manual
+  settings below, webmail will use the first profile (<cite>$pfs[0]</cite>) to log in.
+ </p>
+ <p>
+  <b>[2] Predefined Profiles</b><br/>
+  These profiles are set in the file <cite>./obj/ec_profiles.inc</cite>.<br/>
+  <br/>
+  The first one is automatically selected (<cite>$pfs[0]</cite>), please have a look at chapter
+  <a href="./b.htm#b2">[B2] Predefined Profiles</a> for further information.
+ </p>
+ <p>
+  <b>[3] Hints &amp; Examples</b><br/>
+  If the user selects an option, these hints given in <cite>$pfs[$id]['hint']</cite> will be shown below.<br/>
+  <br/>
+  After that, the link "Click to show example above" appears, which will replace the username-field in [1]
+  with the content of <cite>$pfs[$id]['example']</cite>.
+ </p>
+ <p>
+  <b>[4] External Profiles</b><br/>
+  These profiles are set in an external <cite>*.uwp</cite> file.<br/>
+  <br/>
+  You are able to place a usual <abbr title="Unified Resource Locator">URL</abbr> in the field below. Make sure
+  the link is available and the server returns a <cite>200 HTTP OK</cite>.
+  Have also a look at chapter <a href="./b.htm#b3">[B3] External Profiles</a> for further information.
+ </p>
+ <p>
+  <b>[5] Manual Configuration</b><br/>
+  These attributes are the same as in the profiles, but not as handsome to enter =)<br/>
+  The fields are shown in the following order:<br/>
+  real_host, imap_host, imap_port, imap_mailpath, imap_mainbox<br/>
+  <br/>
+  The last fields are advanced options to generate the server flags for encryption and the service used.
+ </p>
+</div>
+
+<br class="clear"/>
+<a name="c2">&nbsp;</a>
+<h2>?mailbox</h2>
+<p>
+ This page contains the login formular. It is viewed when the user didn't log in, the session expired or the
+ user wanted to reconfigure his settings.
+</p>
+<img class="left" src="./c2.png" alt="login screenshot"/>
+<div style="width:50%" class="left">
+ <p>
+  <b>[1] Account Details</b><br/>
+  This fieldset contains the simple login formular. If the user doesn't choose another profile or the manual
+  settings below, webmail will use the first profile (<cite>$pfs[0]</cite>) to log in.
+ </p>
+</div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

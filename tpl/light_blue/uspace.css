@@ -1,0 +1,63 @@
+.quota{
+ width: 400px;
+ margin: 10px auto;
+ border-left: 1px solid #ccc;
+ border-right: 1px solid #ccc;
+ background:url('./quota/bar_bg.png') repeat-x;
+}
+.quota span{
+ display: block;
+ width: 400px;
+ height: 16px;
+ text-align: center;
+ background:url('./quota/bar.png') no-repeat;
+}
+
+table.uspace{
+ width: 300px;
+}
+table.uspace td.center{
+ text-align: center;
+}
+table.uspace th img,
+table.uspace td img{
+ border: 0px;
+}
+table.uspace a:hover img{
+ background: #f77;
+}
+table.uspace th{
+ background: #c3d9ff;
+}
+
+form.left{
+ clear: both;
+ float: left;
+}
+form.left fieldset ul{
+ margin: 0; padding: 0;
+ list-style: none;
+}
+
+form.right{
+ float: right;
+}
+fieldset{
+ display: block;
+ width: 270px;
+ margin: 0;
+}
+#div0,
+iframe{
+ border: 0px;
+ display: none;
+}
+img.load{
+ width: 1em;
+ height: 1em;
+ border: 0px;
+}
+
+.error{
+clear: both;
+}

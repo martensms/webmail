@@ -1,0 +1,34 @@
+#mailbox{
+ width: 90%;
+ margin: 0 auto;
+}
+#mailbox th,
+#mailbox tr.infobar{
+ background: #c3d9ff;
+ text-align: center;
+}
+
+#mailbox tr td{
+ border-right: 1px dotted #c3d9ff;
+ border-left: 1px dotted #c3d9ff;
+}
+#mailbox tr.read td{
+ background: #e8eefa;
+}
+#mailbox tr.unread td{
+ background: #ffecc3;
+}
+#mailbox tr.deleted td{
+ background: #f99;
+}
+#mailbox tr td a{
+ color: #000;
+ text-decoration: none;
+}
+#mailbox tr td.checkbox{
+ text-align: center;
+}
+#mailbox tr td img{
+ width: 1em;
+ height: 1em;
+}

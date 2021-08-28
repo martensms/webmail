@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <title>webmail - {VAR:TITLE}</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+ <meta http-equiv="Content-Style-Type" content="text/css" />
+ <style type="text/css" title="{VAR:CSS_TITLE}">{CNT:CSS}</style>
+</head>
+<body>
+ {CNT:toolbar}
+ {CNT:table}
+ <br />
+ <form class="folder" method="post" action="?folders::create">
+  <fieldset>
+  <legend>Create Folders</legend>
+   <input name="input[folder]" size="20" />
+   <input type="submit" value="Create" />
+  </fieldset>
+ </form>
+ <form class="folder" method="post" action="?folders::rename">
+  <fieldset>
+  <legend>Rename Folders</legend>
+   <select name="input[old]">
+    <option selected="selected">- select folder -</option>    {CNT:rename}
+   </select>
+   <input name="input[new]" size="20" />
+   <input type="submit" value="Rename" />
+  </fieldset>
+ </form>
+ <div class="error">{VAR:ERROR}</div>
+ {CNT:TRACE}
+</body>
+</html>

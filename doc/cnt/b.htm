@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+       "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+ <title>webmail - Documentation</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+ <meta http-equiv="Content-Style-Type" content="text/css" />
+ <style type="text/css" title="default style">@import url('./content.css');</style>
+</head>
+<body>
+<h1>Configuration</h1>
+<a name="b1">&nbsp;</a>
+<h2>Variables &amp; Globals</h2>
+<p>
+ The configuration is pretty simple. There's a globally used $cfg[]-array which contains pretty everything.
+ The used profiles are parsed in <cite>./obj/uw_config.inc</cite> and the keys are set like this: $cfg[key]="value".<br/>
+ <br/>
+ Further information can be found in the chapter <a href="./d.htm">[D] Styling.</a><br/>
+ Feel free to print it!
+</p>
+<pre>&lt;?php print_r($cfg); ?&gt;</pre>
+<h3>$cfg['beta']</h3>
+<p>
+ This key has a boolean value and could be set to true for viewing additional information, e.g. the requested imap-strings.<br/>
+ It instructs webmail to store additional information in $_COOKIE['error'] which is viewed at the end of each single page.<br/>
+ <br/>
+ To remove it from the single page, edit its template (e.g. <cite>./tpl/message.xhtml</cite> and remove {VAR:error}, which is replaced by the index file.
+</p>
+
+<a name="b2">&nbsp;</a>
+<h2>Predefined Profiles</h2>
+<p>
+ webmail uses its own predefined profiles.<br/>
+ They are stored in the file <cite>./obj/ec_profiles.inc</cite>
+</p>
+<h3>Structure:</h3>
+<p>
+ Well, they are pretty simple. Profiles are stored in the $pfs[]-array.<br/>
+ You are able to create another profile containing the main keys only by pasting it in the second line (directly after the "&lt;?php"-tag).
+ The first appearing $pfs[]-array in the file is the default file, parsed and available with the ID $pfs[0].
+</p>
+<pre>
+$pfs[]=array(
+ "provider"  => "example mail service",
+ "real_host" => "example.com",           # user@example.com
+ "imap_host" => "mail.example.com/pop3", # /pop3 defines it as a pop3-server
+ "imap_port" => 110,                     # default ports for: imap: 143 / pop3: 110
+ "imap_mailpath" => "mail/",             # e.g. mailpath for gmail is [Google Mail]/
+ "imap_mainbox"  => "INBOX",             # default mailbox
+ "example" => "web133p7",                # example login for users viewed in ?login
+ "hint" => "1337 mailservice =)",
+ "usermap" => array(                     # usermap: account => real name
+  'web133p7' => 'leet',
+  'web133p8' => 'admin')
+);
+</pre>
+
+<a name="b3">&nbsp;</a>
+<h2>External Profiles</h2>
+<p>
+ webmail is able to parse files in its own profile format, called *.uwp.<br/>
+ You are able to set any $cfg[]-Variable that is used for the imap connection.<br/>
+</p>
+
+<h3>Structure:</h3>
+<p>
+ The config between the uwmail_profile-tags in the file is parsed:
+</p>
+<pre>
+{uwmail_profile}
+...
+{/uwmail_profile}
+</pre>
+<p>
+ You are able to set the cfg[]-Variables according to this scheme:
+</p>
+<pre>name:value;</pre>
+<p>
+ For creating a properly working profile you have to make sure the needed main keys are set, the file could look like this:
+</p>
+<pre>
+ {uwmail_profile}
+ provider:example host;
+ real_host:example.com;
+ imap_host:imap.example.com;
+ imap_port:143;
+ imap_mailpath:mail/;
+ imap_mainbox:INBOX;
+ {/uwmail_profile}
+</pre>
+<p>
+ You are also able to set the imap flags manually (e.g. to force an encrypted ssl-connection).<br/>
+ Further an example and the hint (both viewed in ?login) are nice things to alleviate the login-page for other users.
+</p>
+<pre>
+ imap_flags:/ssl/service=imap4rev1;
+ example:web133p7;
+ hint:additional information;
+</pre>
+
+<h3>Using the *.uwp-file:</h3>
+<p>
+ After creating the file, you have to make sure the file is available on the net.<br/>
+ You could upload it to <abbr title="example url">http://yourdomain.com/myprofile.uwp</abbr>, the only thing that's
+ important is, that it's available via <abbr title="hypertext transfer protocol">http</abbr>.
+</p>
+<p>
+ If the file is uploaded and available, you are able to use it with webmail.<br/>
+ While viewing the login page, click on "Use external profile?" and paste the <abbr title="Unified Resource Locator">URL</abbr> in the appearing input field.
+</p>
+</body>
+</html>

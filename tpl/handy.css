@@ -1,0 +1,8 @@
+iframe{
+ position: absolute;
+ width: 98%;
+}
+#mailbox img{
+ height: 12px;
+ width: 12px;
+}

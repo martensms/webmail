@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+       "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+ <title>webmail - Documentation</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+ <meta http-equiv="Content-Style-Type" content="text/css" />
+ <style type="text/css" title="default style">@import url('./content.css');</style>
+</head>
+<body>
+<h1>Installation</h1>
+<h2>Requirements</h2>
+<ul>
+ <li>An IMAP or POP3 server</li>
+ <li>A web server (e.g. apache 1 and 2 work fine)</li>
+ <li>A working PHP-Module</li>
+ <li>Installed imap functions (e.g. <cite>php5-imap</cite> library) on the server</li>
+</ul>
+<p>
+ PHP 4 or higher is required, but PHP 4.2.0+ is recommended. PHP must be compiled with at least the <cite>--with-imap</cite> command (whether using IMAP, NNTP or POP3 support).
+</p>
+<p>
+ In addition, the following flags are needed for optional features:<br/>
+ <br/>
+ <cite>--with-imap-ssl</cite> for IMAP/POP3 over SSL<br/>
+ <cite>--with-db</cite> for Sendmail virtusertable support
+</p>
+</body>
+</html>

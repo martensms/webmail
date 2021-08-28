@@ -1,0 +1,37 @@
+#compose fieldset{
+ clear: both;
+ margin: 0 auto;
+}
+#compose fieldset b{
+ clear: both;
+ float: left;
+ font-weight: normal;
+ width: 100px;
+}
+#compose fieldset input{
+ float: right;
+ width: 200px;
+}
+#compose fieldset input[type=checkbox]{
+ width: auto;
+}
+
+#compose #headers,
+#compose #attachments{
+ width: 310px;
+}
+#compose #attachments b{
+ width: auto;
+}
+
+#compose #attachments input{
+ float: left;
+ clear: both;
+}
+
+#compose #message input,
+#compose #message textarea{
+ clear: both;
+ float: left;
+ width: 100%;
+}

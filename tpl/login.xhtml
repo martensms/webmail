@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <title>webmail - {VAR:TITLE}</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+ <meta http-equiv="Content-Style-Type" content="text/css" />
+ <style type="text/css" title="{VAR:CSS_TITLE}">{CNT:CSS}</style>
+ <script type="text/javascript">
+ {CNT:JSCRIPTS}
+ </script>
+</head>
+<body>
+{CNT:toolbar}
+<form id="login" action="./?login" method="post">
+<div class="infobar"><input type="submit" value="Login" />{CNT:logout_btn}</div>
+<fieldset>
+ <legend><abbr title="Cascading StyleSheets">CSS</abbr></legend>
+ Switch on/off: {CNT:css_btn}
+</fieldset>
+<div class="error">
+ {VAR:ERROR}<br/>
+</div>
+ <fieldset>
+  <legend>Account Details</legend>
+  <b>
+   <input type="radio" name="input[advcfg]" value="simple" onclick="jscript:hide('pfs');hide('man');hide('uwp');" />
+   <abbr title="Login to this server ({VAR:localhost})">Use simple login?</abbr>
+  </b>
+  <input id="username" type="text" name="input[username]" value="{CFG:username}" />
+  <input type="password" name="input[password]" />
+ </fieldset>
+ <fieldset>
+  <legend>Server Profiles</legend>
+  <b>
+   <input type="radio" name="input[advcfg]" value="profile" onclick="jscript:unhide('pfs');hide('uwp');hide('man');" checked="checked" />
+   Use predefined profile?
+  </b>
+  <select id="pfs" name="input[profile]" onchange="unhide('hint');">{CNT:PROFILES}
+  </select>
+  <div id="hint"><abbr title="Please allow JavaScript to replace the hints by dragging the select menu above.">No hint</abbr></div>
+  <b>
+   <input type="radio" name="input[advcfg]" value="xmlfile" onclick="jscript:unhide('uwp');hide('pfs');hide('man');" />
+   Use external profile?
+  </b>
+  <input id="uwp" type="text" name="input[url]" value="http://example.com/example.uwp" />
+ </fieldset>
+ <fieldset>
+  <legend>Manual Configuration</legend>
+  <b>
+   <input type="radio" name="input[advcfg]" value="manual" onclick="jscript:unhide('man');hide('pfs');hide('uwp');" />
+   <abbr title="You've got to know what you're doing, bro!">Use manual settings?</abbr>
+  </b>
+  <div id="man">
+  <abbr title="host"><input type="text" name="input[real_host]" value="{CFG:real_host}" /></abbr>
+  <abbr title="imap_host"><input type="text" name="input[imap_host]" value="{CFG:imap_host}" /></abbr>
+  <abbr title="imap_port"><input type="text" name="input[imap_port]" value="{CFG:imap_port}" /></abbr>
+  <abbr title="imap_mailpath"><input type="text" name="input[imap_mailpath]" value="{CFG:imap_mailpath}" /></abbr>
+  <abbr title="imap_mainbox"><input type="text" name="input[imap_mainbox]" value="{CFG:imap_mainbox}" /></abbr>
+
+  <input type="radio" name="input[flags][crypt]" value="notls" />/notls
+  <input type="radio" name="input[flags][crypt]" value="tls" />/tls
+  <input type="radio" name="input[flags][crypt]" value="ssl" />/ssl
+  <select name="input[flags][service]">
+   <optgroup label="/service=">
+    <option value="imap" selected="selected">imap</option>
+    <option value="imap2">imap2</option>
+    <option value="imap2bis">imap2bis</option>
+    <option value="imap4">imap4</option>
+    <option value="imap4rev1">imap4rev1</option>
+    <option value="nntp">nntp</option>
+    <option value="pop3">pop3</option>
+   </optgroup>
+  </select>
+  </div>
+ </fieldset>
+<div class="infobar"><input type="submit" value="Login" />{CNT:logout_btn}</div>
+</form>
+<div class="beta"><a href="./doc">doc</a>&nbsp;|&nbsp;<a href="?about">about v{VAR:version}</a>&nbsp;|&nbsp;webmail <sup>&copy;2009</sup></div>
+{CNT:TRACE}
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <title>webmail - {VAR:TITLE}</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+ <meta http-equiv="Content-Style-Type" content="text/css" />
+ <style type="text/css" title="{VAR:CSS_TITLE}">{CNT:CSS}</style>
+</head>
+<body>
+ {CNT:toolbar}
+ <div id="message">
+  <fieldset>
+   <legend>Information</legend>
+   <b>Received from:</b> <abbr title="Click here to compose a mail!">{VAR:compose_link}</abbr>
+   <b>Sent to:</b> <abbr title="Click here to compose a mail!">{CNT:to_list}</abbr>
+   <b>Carbon copy:</b> <abbr title="Click here to compose a mail!">{CNT:cc_list}</abbr>
+  </fieldset>
+  <fieldset>
+   <legend>Message Details</legend>
+   <b>Subject:</b> <span>{VAR:subject}</span>
+   <b>Date:</b> <span>{VAR:date}</span>
+  </fieldset>
+
+  <div class="infobar">{CNT:info}</div>
+  <!-- begin message -->
+  <iframe src="{VAR:iframe_url}" />
+  <!-- end message -->
+ </div>
+ {CNT:TRACE}
+</body>
+</html>

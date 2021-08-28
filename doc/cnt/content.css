@@ -1,0 +1,46 @@
+body{
+ margin-top: 3em;
+}
+
+h1{
+ position: fixed;
+ margin: 0; padding: 0;
+ top: 0px;
+ left: 0px;
+ width: 100%;
+ background: #f77;
+ text-align: center;
+}
+h2{
+ border: 2px dotted #f77;
+ text-decoration: underline;
+ background: #fff;
+ margin: 10px auto;
+ padding: 10px 10px;
+}
+pre{
+ background: #ffecc3;
+ border: 1px solid #ccc;
+ margin-left: 10px;
+}
+cite{
+ background: #fff;
+ border: 1px dotted #ccc;
+}
+a{
+ color: #f70;
+ text-decoration: none;
+ font-style: italic;
+}
+img{
+ border: 3px dotted #ccc;
+}
+.left{
+ float: left;
+}
+.clear{
+ clear: both;
+}
+div.left p{
+ margin-left: 2em;
+}

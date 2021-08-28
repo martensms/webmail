@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <title>webmail - {VAR:TITLE}</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+ <meta http-equiv="Content-Style-Type" content="text/css" />
+ <style type="text/css" title="{VAR:CSS_TITLE}">{CNT:CSS}</style>
+ <script type="text/javascript" src="{VAR:JSCRIPTS}"><!-- dummy4opera --></script>
+</head>
+<body>
+{CNT:toolbar}
+{CNT:quota}
+
+ <form class="left" name="download" method="post" action="?uspace:{VAR:folder}">
+  <table class="uspace">
+   <tr>
+    <th colspan="2">
+     <a href="?uspace:{VAR:folder}" title="refresh"><img src="{VAR:refreshimg}" alt="refresh"/></a>
+     <a href="#nuex" title="parent"><img src="{VAR:parentimg}" alt="parent"/></a>
+    </th>
+   </tr>
+   <tr>
+    <th colspan="2">Online Files</th>
+   </tr>
+   <tr>
+    <td colspan="2" class="center">(in folder {VAR:folder})</td>
+   </tr>
+   {CNT:files}
+   <tr>
+    <th colspan="2">
+     <input type="reset"/>
+     <input type="submit" name="input[delete]" value="Delete"/>
+     <input type="submit" name="input[dl_gzip]" value="Download (gzip)" disabled="disabled"/>
+    </th>
+   </tr>
+  </table>
+</form>
+<form class="right" name="upload" target="iframe0" method="post" action="?uspace:{VAR:folder}:upload" enctype="multipart/form-data">
+ <fieldset>
+  <legend>Upload Files</legend>
+  <input id="browse" type="file" name="attach" onchange="javascript:formsubmit('0','1');"/>
+  <input id="hidden" type="hidden" name="input[id]" value="0"/>
+ </fieldset>
+ <div id="div0">(#0) <b id="status0"><img class="load" src="./tpl/light_blue/quota/load.gif"/></b> <span id="file0">...</span></div>
+</form>
+<iframe name="iframe0" id="iframe0" scrolling="no"></iframe>
+<div class="error">
+ {VAR:error}<br/>
+ Hint: Select a folder in <a href="?folders">?folders</a>, then go back here again.<br/>
+ Only 20 files can be viewed at once to avoid DDoS attacks.
+</div>
+</body>
+</html>

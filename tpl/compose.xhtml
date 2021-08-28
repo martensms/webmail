@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <title>webmail - {VAR:TITLE}</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+ <meta http-equiv="Content-Style-Type" content="text/css" />
+ <style type="text/css" title="{VAR:CSS_TITLE}">{CNT:CSS}</style>
+ <script type="text/javascript">
+ function swi(id){
+  if(document.getElementById(id).readOnly==true){
+   document.getElementById(id).readOnly=false;
+  }else{
+   document.getElementById(id).readOnly=true;
+  }
+ }
+ </script>
+</head>
+<body>
+ {CNT:toolbar}
+ <form id="compose" enctype="multipart/form-data" method="post" action="?compose:send:{VAR:folder}:{VAR:msgno}">
+  <div class="infobar"><input type="submit" name="submit" value="Send" /></div>
+
+  <fieldset id="headers">
+   <legend>Mail Headers</legend>
+   <b>Sender:</b> <input id="from" name="input[from]" value="{VAR:from}" readonly="readonly" />
+   <b style="width:auto;">Fake sender?</b> <input type="checkbox" name="input[fake]" onclick="javascript:swi('from');" />
+   <b>Receiver:</b> <input name="input[to]" value="{VAR:to}" />
+   <b>(<abbr title="carbon copy">CC</abbr>):</b> <input name="input[cc]" />
+  </fieldset>
+
+  <fieldset id="attachments">
+   <legend>Attachments</legend>
+   <input type="file" name="attach1" /><input type="file" name="attach2" />
+   <input class="clear" type="file" name="attach3" /><input type="file" name="attach4" />
+   <br />
+   <b><input type="checkbox" name="input[send_html]" /> Send message as HTML?</b>
+   <b><input type="checkbox" name="input[send_rfc822]" {VAR:fwd_msg}/> Send original message as Attachment?</b>
+  </fieldset>
+  <fieldset id="message">
+   <legend>Message</legend>
+   <input name="input[subject]" value="{VAR:subject}" />
+   <textarea name="input[body]" rows="15">{VAR:body}</textarea>
+  </fieldset>
+
+  <div class="infobar"><input type="submit" name="submit" value="Send" /></div>
+ </form>
+ {CNT:TRACE}
+</body>
+</html>

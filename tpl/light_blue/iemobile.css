@@ -1,0 +1,27 @@
+#compose fieldset{
+ clear: both;
+ margin: 0 auto;
+}
+#compose fieldset b{
+ display: none;
+}
+#compose fieldset input{
+ float: left;
+ width: 200px;
+}
+#compose fieldset input[type=checkbox]{
+ width: auto;
+}
+#compose #headers{
+ width: 210px;
+}
+#compose #attachments{
+ width: 270px;
+}
+#compose #attachments input{
+ float: left;
+ clear: both;
+}
+#compose .infobar{
+ clear: both;
+}

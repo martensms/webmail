@@ -1,0 +1,33 @@
+#message fieldset b{
+ float: left;
+ clear: both;
+}
+
+#message fieldset abbr,
+#message fieldset span{
+ float: right;
+}
+
+#message iframe{
+ width: 100%;
+ min-height: 300px;
+ border: 1px solid #ccc;
+}
+.attach{
+ display: block;
+ float: left;
+ width: 300px;
+ margin: 5px;
+ background: #fff;
+ border: 3px dotted #ccc;
+ text-align: center;
+}
+.attach:hover{
+ background: #ffecc3;
+ border: 3px dotted #f77;
+}
+.attach img{
+ display: block;
+ float: left;
+ height: 40px;
+}

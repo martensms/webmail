@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <title>webmail - {VAR:TITLE}</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+ <meta http-equiv="Content-Style-Type" content="text/css" />
+ <style type="text/css" title="{VAR:CSS_TITLE}">{CNT:CSS}</style>
+</head>
+<body>
+{CNT:toolbar}
+<form id="login" action="./?login" method="post">
+<div class="infobar"><input type="submit" value="Login" />{CNT:logout_btn}</div>
+<div class="error">
+ {VAR:ERROR}<br/>
+</div>
+ <fieldset>
+  <legend>Account Details</legend>
+  <b>
+   <input type="radio" name="input[advcfg]" value="simple" checked="checked" />
+   <abbr title="Login to this server ({VAR:localhost})">Use simple login?</abbr>
+  </b>
+  <input id="username" type="text" name="input[username]" value="{CFG:username}" />
+  <input type="password" name="input[password]" />
+ </fieldset>
+<div class="infobar"><input type="submit" value="Login" />{CNT:logout_btn}</div>
+</form>
+<div class="beta"><a href="./doc">doc</a>&nbsp;|&nbsp;<a href="?about">about v{VAR:version}</a>&nbsp;|&nbsp;webmail <sup>&copy;2009</sup></div>
+{CNT:TRACE}
+</body>
+</html>

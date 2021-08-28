@@ -1,0 +1,35 @@
+form#login fieldset{
+ display: block;
+ clear: both;
+ width: 230px;
+ margin: 10px auto;
+}
+form#login fieldset input[type=text],
+form#login fieldset input[type=password],
+form#login fieldset b,
+form#login fieldset select{
+ display: block;
+ width: 200px;
+ margin: 0 auto;
+ font-weight: normal;
+}
+form#login fieldset input[type=radio]{
+ width: auto;
+}
+form#login fieldset b{
+ width: 220px;
+ border: 1px dotted #ccc;
+ margin: 5px;
+}
+form#login fieldset #hint{
+ text-align: center;
+ margin: 10px auto;
+ border: 1px dotted #ccc;
+ background: #ffecc3;
+ font-size: 0.8em;
+}
+form#login fieldset #uwp,
+form#login fieldset #man,
+form#login fieldset #hint{
+ display: none;
+}

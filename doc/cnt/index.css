@@ -1,0 +1,55 @@
+body{
+ background: #e8eefa;
+}
+ul#navi{
+ position: absolute;
+ width: 17%;
+ margin: 0;
+ padding: 0;
+ left: 10px;
+ top: 10px;
+ list-style: none;
+ background: #ffecc3;
+ border: 1px dotted #ccc;
+}
+ul#navi li{
+ padding: 2px;
+ border-bottom: 1px solid #ccc;
+ text-align: left;
+ color: #000;
+ border: 1px solid #ffecc3;
+}
+ul#navi li ul.sub{
+ margin: 0; padding: 0;
+ list-style: none;
+}
+ul#navi li ul.sub li{
+ margin-left: 10px;
+ padding: 0px;
+ border: 1px solid #ffecc3;
+}
+ul#navi li:hover,
+ul#navi li ul.sub li:hover{
+ border: 1px solid #f77;
+}
+ul#navi li a{
+ text-decoration: none;
+ color: #000;
+}
+iframe{
+ position: absolute;
+ display: block;
+ width: 80%;
+ height: 90%;
+ right: 10px;
+ top: 10px;
+}
+div.infobar{
+ position: absolute;
+ width: 100%;
+ right: 0px;
+ bottom: 0px;
+ padding: 5px;
+ text-align: right;
+ background: #f77;
+}
